@@ -1,6 +1,7 @@
 // AdminPage.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import '../styles/index.css'; // Import the styles fil
 
 const AdminPage = () => {
   const [users, setUsers] = useState([]);
@@ -20,11 +21,14 @@ const AdminPage = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Admin Page</h1>
+    <div className="container mx-auto p-4"> {/* Add Tailwind CSS classes */}
+      <h1 className="text-4xl font-bold mb-4">Admin Page</h1>
       <ul>
         {users.map(user => (
-          <li key={user.id}>{JSON.stringify(user.data)}</li>
+          <li key={user.id} className="mb-2 p-2 border border-gray-300 rounded">
+            {user.data.name}
+            {JSON.stringify(user.data.location)}
+          </li>
         ))}
       </ul>
     </div>
