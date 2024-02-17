@@ -10,7 +10,7 @@ const AdminPage = () => {
     // Fetch users from the backend on component mount
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/requests');
+        const response = await axios.get('https://backend-ota2.onrender.com/requests');
         setUsers(response.data);
       } catch (error) {
         console.error('Error fetching users', error);
